@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Computed from '../views/Computed.vue'
+import Watch from '../views/WatchAndWatchEffect.vue'
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/computed',
     name: 'computed',
     component: Computed
+  }, 
+  {
+    path: '/watch',
+    name: 'watch',
+    component: Watch
   }
 ]
 
