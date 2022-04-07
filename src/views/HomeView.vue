@@ -1,30 +1,37 @@
 <template>
+<!-- Refs vs Reactive -->
   <div class="home">
     <h1>home</h1>
-    <h2>my name is {{name}} and my age is {{ age }}</h2>
-    <button @click="handleClick">Click me</button>
-    <button @click="age++">add age</button>
-    <input type="text" v-model="name">
+    <h2>refs</h2>
+    <p>Hi my name is {{ personOne.name }} and I'm {{ personOne.age }}</p>
+    <button @click="updatePersonOne">Click me</button>
+    <br>
+    <h2>reactive</h2>
+    <p>Person two {{personTwo.name}} - {{ personTwo.age }}</p>
+    <button @click="updatePersonTwo">Update two</button>
   </div>
 </template>
 
 <script>
-import { ref } from '@vue/reactivity'
+import { ref, reactive } from '@vue/reactivity'
 
 
 export default {
   name: 'HomeView',
   setup() {
-    const name = ref('Mel')
-    const age = ref(25)
+    const personOne = ref({ name: 'Mel', age: 25})
+    const personTwo = reactive({ name: 'John', age: 22})
 
-    const handleClick = () => {
-      name.value = 'John',
-      age.value = 26
+    const updatePersonOne = () => {
+      personOne.value.age = 27
+    }
+
+    const updatePersonTwo = () => {
+      personTwo.age = 30
     }
 
 
-    return { name, age, handleClick}
+    return { personOne, updatePersonOne, personTwo, updatePersonTwo}
   }
 }
 </script>
