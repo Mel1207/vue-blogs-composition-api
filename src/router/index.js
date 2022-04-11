@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeMain from '../views/Home.vue'
+import RefsVsReactive from '../views/RefsVsReactive.vue'
 import Computed from '../views/Computed.vue'
 import Watch from '../views/WatchAndWatchEffect.vue'
 
@@ -7,7 +8,12 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeMain
+  },
+  {
+    path: '/refs',
+    name: 'refs',
+    component: RefsVsReactive
   },
   {
     path: '/computed',
