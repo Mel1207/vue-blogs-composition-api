@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeMain from '../views/Home.vue'
 import RefsVsReactive from '../views/RefsVsReactive.vue'
 import Computed from '../views/Computed.vue'
+import Details from '../views/Details.vue'
 import Watch from '../views/WatchAndWatchEffect.vue'
 
 const routes = [
@@ -24,6 +25,12 @@ const routes = [
     path: '/watch',
     name: 'watch',
     component: Watch
+  },
+  {
+    path: '/posts/:id',
+    name: 'Details',
+    component: Details,
+    props: true
   }
 ]
 
